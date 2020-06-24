@@ -1,0 +1,13 @@
+{
+  "name": "express-cros",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:server": "node src/main.js",
+    "start:brower": "serve public -p 3001"
+  },
+  "dependencies": {
+    "express": "^5.0.0-alpha.8"
+  }
+}
