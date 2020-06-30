@@ -19,10 +19,33 @@ app.all("*", (req, res, next) => {
   }
 });
 
+app.get("/favicon.ico", (req, res) => res.status(204));
+
 app.get("/", (req, res) => res.json({ foo: "bar" }));
+
+app.get("/close", (req, res) => {
+  res.header("Connection", "close");
+  res.json({ foo: "bar" });
+});
+
+app.get("/close", (req, res) => {
+  req.headers("Connection", "close");
+  console.log(req.headers);
+  console.log("get data");
+  res.header("Connection", "close");
+  res.json({ foo: "bar" });
+});
 
 app.post("/", (req, res) => res.json({ foo: "bar" }));
 
-app.delete("/", (req, res) => res.json({ foo: "bar" }));
+app.put("/", (req, res) => {
+  res.header("Connection", "close");
+  res.json({ foo: "bar" });
+});
+
+app.delete("/", (req, res) => {
+  res.header("Connection", "close");
+  res.json({ foo: "bar" });
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
