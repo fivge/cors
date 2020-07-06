@@ -48,4 +48,57 @@ app.delete("/", (req, res) => {
   res.json({ foo: "bar" });
 });
 
+//#region heroes
+
+let HEROES = [
+  {
+    id: 11,
+    name: "Dr Nice",
+  },
+  {
+    id: 12,
+    name: "Narco",
+  },
+  {
+    id: 13,
+    name: "Bombasto",
+  },
+  {
+    id: 14,
+    name: "Celeritas",
+  },
+  {
+    id: 15,
+    name: "Magneta",
+  },
+  {
+    id: 16,
+    name: "RubberMan",
+  },
+  {
+    id: 17,
+    name: "Dynama",
+  },
+  {
+    id: 18,
+    name: "Dr IQ",
+  },
+  {
+    id: 19,
+    name: "Magma",
+  },
+  {
+    id: 20,
+    name: "Tornado",
+  },
+];
+
+app.get("/api/heroes", (req, res) => res.json(HEROES));
+
+app.get("/api/heroes/:id", (req, res) => {
+  res.json(HEROES.find((hero) => hero.id == req.params.id));
+});
+
+//#endregion
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
