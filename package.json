@@ -8,6 +8,6 @@
     "start:brower": "serve public -p 3001"
   },
   "dependencies": {
-    "express": "^5.0.0-alpha.8"
+    "express": "^5.0.0-beta.3"
   }
 }
